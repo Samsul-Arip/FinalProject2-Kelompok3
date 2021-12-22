@@ -7,9 +7,10 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiClinet {
+public class ApiClient {
 
     public static ApiEndPoint getApiEndPoint() {
+
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor()
                 .setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder()
@@ -20,7 +21,6 @@ public class ApiClinet {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
-
         return retrofit.create(ApiEndPoint.class);
 
     }
