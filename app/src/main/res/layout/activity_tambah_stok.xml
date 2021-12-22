@@ -64,6 +64,7 @@
                 android:layout_marginTop="15dp"
                 />
             <Spinner
+                android:id="@+id/spinCategory"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:entries="@array/itemBarang"
@@ -75,6 +76,7 @@
                 android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
                 />
             <Spinner
+                android:id="@+id/spinCategoryGender"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:entries="@array/itemCategoryGender"
@@ -82,10 +84,12 @@
                 android:layout_marginEnd="14dp"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
+                android:visibility="gone"
                 android:layout_marginTop="22dp"
                 android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
                 />
             <Spinner
+                android:id="@+id/spinCategoryElectronic"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:entries="@array/itemCategoryElectronic"
@@ -139,6 +143,7 @@
                 android:layout_marginTop="5dp"
                 android:hint="@string/masukkan_nama_barang"
                 android:textSize="14sp"
+                android:imeOptions="actionNext"
                 android:fontFamily="@font/poppin_regular"
                 android:paddingStart="14dp"
                 android:paddingEnd="14dp"
@@ -156,7 +161,7 @@
                 android:layout_marginTop="30dp"
                 />
             <EditText
-                android:id="@+id/edtName"
+                android:id="@+id/edtStock"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/bg_edittext"
@@ -164,6 +169,7 @@
                 android:layout_marginEnd="14dp"
                 android:layout_marginTop="5dp"
                 android:hint="@string/ex_10"
+                android:imeOptions="actionDone"
                 android:textSize="14sp"
                 android:fontFamily="@font/poppin_regular"
                 android:paddingStart="14dp"
@@ -207,7 +213,18 @@
                 android:textColor="@color/white"
                 android:layout_marginBottom="20dp"
                 />
+            <ProgressBar
+                android:id="@+id/pbLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:progressTint="@color/colorPrimary"
+                android:visibility="gone"
+                android:layout_marginTop="39dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                />
         </LinearLayout>
+
     </ScrollView>
 
 

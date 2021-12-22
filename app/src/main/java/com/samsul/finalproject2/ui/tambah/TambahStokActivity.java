@@ -7,9 +7,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Toast;
-
-import com.samsul.finalproject2.data.model.ResponseInsertBarang;
 import com.samsul.finalproject2.databinding.ActivityTambahStokBinding;
 import com.samsul.finalproject2.presenter.TambahStockPresenter;
 import com.samsul.finalproject2.repository.TambahStockContract;
@@ -20,10 +20,11 @@ public class TambahStokActivity extends AppCompatActivity implements TambahStock
 
     private ActivityTambahStokBinding binding;
     private TambahStockPresenter presenter;
-    private ResponseInsertBarang responseModel;
+
 
     private Uri uriImage = null;
     private final int pickImage = 1;
+    private int category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +32,6 @@ public class TambahStokActivity extends AppCompatActivity implements TambahStock
         binding = ActivityTambahStokBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         presenter = new TambahStockPresenter(this);
-
-        binding.btnTambahStok.setOnClickListener(v -> {
-            presenter.insertStock(FileUtils.getFile(this, uriImage), 1, "Baju",
-                    1, 0, 99, "ini adalah baju gaul");
-            showMessage("Test");
-
-        });
     }
 
     @Override
@@ -58,27 +52,77 @@ public class TambahStokActivity extends AppCompatActivity implements TambahStock
                 GaleryHelper.openGalery(TambahStokActivity.this);
             }
         });
+        binding.spinCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 1:
+                        binding.spinCategoryGender.setVisibility(View.VISIBLE);
+                        binding.spinCategoryElectronic.setVisibility(View.GONE);
+                        break;
+                    case 2:
+                        binding.spinCategoryGender.setVisibility(View.GONE);
+                        binding.spinCategoryElectronic.setVisibility(View.VISIBLE);
+                        break;
+                    case 3:
+                    case 4:
+                        binding.spinCategoryGender.setVisibility(View.GONE);
+                        binding.spinCategoryElectronic.setVisibility(View.GONE);
+                        break;
+                }
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        binding.btnTambahStok.setOnClickListener(v -> {
+            int categoryBarang = binding.spinCategory.getSelectedItemPosition();
+            int categoryBusana = binding.spinCategoryGender.getSelectedItemPosition();
+            int categoryElectronic = binding.spinCategoryElectronic.getSelectedItemPosition();
+            String name = binding.edtNamabarang.getText().toString();
+            int stockBarang = Integer.parseInt(binding.edtStock.getText().toString());
+
+           switch (categoryBarang) {
+               case 1:
+                   category = categoryBusana;
+                   break;
+               case 2:
+                   category = categoryElectronic;
+                   break;
+               default:
+                   category = 0;
+                   break;
+           }
+           if(name.isEmpty() && stockBarang == 0) {
+               binding.edtNamabarang.setError("Tidak boleh kosong");
+               binding.edtStock.setError("Harus diisi data");
+           } else if(uriImage.toString().isEmpty()) {
+               showMessage("Gambar harus diisi");
+           } else {
+               presenter.insertStock(
+                       FileUtils.getFile(this, uriImage), categoryBarang, name,
+                       category, category, stockBarang, "Ini hanyalah percobaan");
+           }
+        });
 
     }
 
     @Override
     public void showLoading(Boolean loading) {
         if (loading) {
-
+            binding.pbLoading.setVisibility(View.VISIBLE);
+            binding.btnTambahStok.setVisibility(View.GONE);
         } else {
-
+            binding.pbLoading.setVisibility(View.GONE);
+            binding.btnTambahStok.setVisibility(View.VISIBLE);
         }
     }
 
     @Override
     public void showMessage(String message) {
         Toast.makeText(TambahStokActivity.this, message, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void resultInsertStock(ResponseInsertBarang result) {
-
     }
 
 
