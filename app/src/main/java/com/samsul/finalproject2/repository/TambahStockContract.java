@@ -15,6 +15,5 @@ public interface TambahStockContract {
         void onCreateActivity();
         void showLoading(Boolean loading);
         void showMessage(String message);
-        void resultInsertStock(ResponseInsertBarang result);
     }
 }

@@ -73,14 +73,12 @@ public class TambahStokActivity extends AppCompatActivity implements TambahStock
 
     @Override
     public void showMessage(String message) {
-        Toast.makeText(TambahStokActivity.this, "Berhasil Tambah stock", Toast.LENGTH_SHORT).show();
+        Toast.makeText(TambahStokActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void resultInsertStock(ResponseInsertBarang result) {
-        responseModel.setMessage(result.getMessage());
-        responseModel.setStatus(result.getStatus());
-        responseModel.setResponse(result.getResponse());
+
     }
 
 

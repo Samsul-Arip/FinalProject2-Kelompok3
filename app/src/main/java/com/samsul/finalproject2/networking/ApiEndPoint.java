@@ -4,6 +4,8 @@ import com.samsul.finalproject2.data.model.ResponseInsertBarang;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
+import retrofit2.http.Header;
+import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -19,8 +21,10 @@ public interface ApiEndPoint {
      */
     @Multipart
     @POST("Barang/barang")
+    @Headers("Authorization: Basic Y3JtOjEyMw==")
     Call<ResponseInsertBarang>
     insertData(
+            @Header("taco-auth-key") String auth,
             @Part MultipartBody.Part files,
             @Query("kategory_barang") int categoryBarang,
             @Query("name") String name,

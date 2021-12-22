@@ -31,15 +31,18 @@ public class TambahStockPresenter implements TambahStockContract.Presenter{
         RequestBody requestBody = RequestBody.create(MediaType.parse("image/*"), files);
         @NonNull MultipartBody.Part multipartBody = MultipartBody.Part.createFormData("files", files.getName(), requestBody);
         view.showLoading(true);
-        ApiClient.getApiEndPoint().insertData(multipartBody, categoryBarang, name, categoryGender, categoryElektronik, stokBarang, deskripsi)
+        ApiClient.getApiEndPoint().insertData("crm_development",multipartBody, categoryBarang, name, categoryGender, categoryElektronik, stokBarang, deskripsi)
                 .enqueue(new Callback<ResponseInsertBarang>() {
                     @Override
                     public void onResponse(Call<ResponseInsertBarang> call, Response<ResponseInsertBarang> response) {
                         if(response.isSuccessful() && response.code() == 201) {
+                            ResponseInsertBarang responseInsertBarang = response.body();
+                            assert responseInsertBarang != null;
+                            assert response.body() != null;
+                            responseInsertBarang.setMessage(response.body().getMessage());
                             view.showLoading(false);
                             assert response.body() != null;
                             view.showMessage(response.body().getMessage());
-                            view.resultInsertStock(response.body());
                         } else {
                             view.showLoading(false);
                             assert response.body() != null;

@@ -18,8 +18,8 @@ public class ApiClient {
                 .build();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BuildConfig.SERVER_URL)
-                .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit.create(ApiEndPoint.class);
 
