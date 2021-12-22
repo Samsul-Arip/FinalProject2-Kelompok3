@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_to_admin">Login to Admin</string>
+    <string name="masukkan_email">Masukkan Email</string>
+</resources>

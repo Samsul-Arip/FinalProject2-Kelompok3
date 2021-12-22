@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".ui.home.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarHome"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/beranda"
+            android:fontFamily="@font/poppin_semibold"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="20dp"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:src="@drawable/logo_beranda_admin"
+        android:layout_marginTop="80dp"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDaftarstaf"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/bg_button"
+        android:text="@string/daftar_staf"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppin_semibold"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnTambahStok"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_button"
+        android:text="@string/tambah_stok"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppin_semibold"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="20dp"
+        />
+</LinearLayout>

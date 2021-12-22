@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Final Project 2</string>
+    <string name="login_to_admin">Login to Admin</string>
+    <string name="email">Email</string>
+    <string name="masukkan_email">Masukkan Email</string>
+    <string name="password">Password</string>
+    <string name="masukkan_kata_sandi">Masukkan kata sandi</string>
+    <string name="remember_me">Remember me</string>
+    <string name="masuk">Masuk</string>
+    <string name="masuk_ke_admin">Masuk ke Admin</string>
+    <string name="beranda">Beranda</string>
+    <string name="daftar_staf">Daftar Staf</string>
+    <string name="tambah_stok">Tambah Stok</string>
+    <string name="log_out">Log Out</string>
+    <string name="tambah_staf">Tambah Staf</string>
+    <string name="masukkan_nama">Masukkan nama</string>
+    <string name="ex_samsul_aripin">ex : Samsul Aripin</string>
+    <string name="konfirmasi_password">Konfirmasi</string>
+    <string name="konfirmasi_kata_sandi">Konfirmasi kata sandi</string>
+    <string name="tambah_kategori">Tambah Kategori</string>
+    <string name="tambah_produk">Tambah produk</string>
+    <string name="masukkan_nama_barang">Masukkan nama barang</string>
+    <string name="nama_barang">Nama barang</string>
+    <string name="stok_barang">Stok barang</string>
+    <string name="ex_10">ex : 10</string>
+    <string name="upload_gambar">Upload gambar</string>
+
+    <string-array name="itemBarang">
+        <item>-- Pilih barang --</item>
+        <item>- Busana</item>
+        <item>- Elektronik</item>
+        <item>- Buku</item>
+        <item>- Lainnya</item>
+    </string-array>
+
+    <string-array name="itemCategoryGender">
+        <item>-- Pilih jenis kelamin --</item>
+        <item>- Laki - Laki</item>
+        <item>- Perempuan </item>
+    </string-array>
+
+    <string-array name="itemCategoryElectronic">
+        <item>-- Pilih kategori elektronik --</item>
+        <item>- Komputer</item>
+        <item>- Smart Phone </item>
+    </string-array>
+</resources>
