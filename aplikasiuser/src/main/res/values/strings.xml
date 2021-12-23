@@ -24,5 +24,8 @@
     <string name="free_shipping_nduring_covid_19">Free Shipping \nDuring Covid - 19</string>
     <string name="komputer">Komputer</string>
     <string name="smart_phone">Smart Phone</string>
+    <string name="pria">Pria</string>
+    <string name="perempuan">Perempuan</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
 
 </resources>

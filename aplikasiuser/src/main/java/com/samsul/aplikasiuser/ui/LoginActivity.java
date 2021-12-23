@@ -33,7 +33,14 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Ma
         });
 
         binding.btnMasuk.setOnClickListener(v -> {
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            String noPhone = binding.edtNoHp.getText().toString();
+            String password = binding.edtPassword.getText().toString();
+            if(noPhone.isEmpty() && password.isEmpty()) {
+                binding.edtNoHp.setError("Tidak boleh kosong");
+                binding.edtPassword.setError("Tidak boleh kosong");
+            } else {
+                presenter.loginUser(noPhone, password);
+            }
         });
     }
 
