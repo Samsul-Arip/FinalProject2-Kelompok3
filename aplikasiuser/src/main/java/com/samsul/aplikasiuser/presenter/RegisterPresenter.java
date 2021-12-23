@@ -20,7 +20,7 @@ public class RegisterPresenter implements RegisterContract.Presenter {
     @Override
     public void registerUser(String username, String name, String password, String noHp) {
         view.showLoading(true);
-        ApiClient.getApiEndPoint().registerUser(username, name, password, noHp).enqueue(new Callback<ResponseRegister>() {
+        ApiClient.getApiEndPoint().registerUser("crm_development",username, name, password, noHp).enqueue(new Callback<ResponseRegister>() {
             @Override
             public void onResponse(Call<ResponseRegister> call, Response<ResponseRegister> response) {
                 if(response.isSuccessful() && response.code() == 201) {

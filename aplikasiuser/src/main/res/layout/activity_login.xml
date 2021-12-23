@@ -176,5 +176,15 @@
         android:textColor="@color/white"
         android:layout_marginBottom="20dp"
         />
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:progressTint="@color/colorPrimary"
+        android:visibility="gone"
+        android:layout_marginTop="39dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal"
+        />
 
 </LinearLayout>
