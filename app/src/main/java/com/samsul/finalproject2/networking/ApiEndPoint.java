@@ -3,6 +3,7 @@ package com.samsul.finalproject2.networking;
 import com.samsul.finalproject2.data.model.ResponseInsertBarang;
 
 import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
@@ -26,12 +27,12 @@ public interface ApiEndPoint {
     insertData(
             @Header("taco-auth-key") String auth,
             @Part MultipartBody.Part files,
-            @Query("kategory_barang") int categoryBarang,
-            @Query("name") String name,
-            @Query("kategory_gender") int categoryGender,
-            @Query("kategory_elektronik") int categoryElectronic,
-            @Query("stok_barang") int stockBarang,
-            @Query("deskripsi") String description
+            @Part("kategory_barang") RequestBody categoryBarang,
+            @Part("name") RequestBody name,
+            @Part("kategory_gender") RequestBody categoryGender,
+            @Part("kategory_elektronik") RequestBody categoryElectronic,
+            @Part("stok_barang") RequestBody stockBarang,
+            @Part("deskripsi") RequestBody description
     );
 
 

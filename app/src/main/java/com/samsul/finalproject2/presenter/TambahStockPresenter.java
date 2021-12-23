@@ -28,10 +28,16 @@ public class TambahStockPresenter implements TambahStockContract.Presenter{
 
     @Override
     public void insertStock(File files, int categoryBarang, String name, int categoryGender, int categoryElektronik, int stokBarang, String deskripsi) {
+        RequestBody cB = RequestBody.create(MultipartBody.FORM, String.valueOf(categoryBarang));
+        RequestBody nama = RequestBody.create(MultipartBody.FORM, String.valueOf(name));
+        RequestBody cG = RequestBody.create(MultipartBody.FORM, String.valueOf(categoryGender));
+        RequestBody cE = RequestBody.create(MultipartBody.FORM, String.valueOf(categoryElektronik));
+        RequestBody sB = RequestBody.create(MultipartBody.FORM, String.valueOf(stokBarang));
+        RequestBody desc = RequestBody.create(MultipartBody.FORM, String.valueOf(deskripsi));
         RequestBody requestBody = RequestBody.create(MediaType.parse("image/*"), files);
         @NonNull MultipartBody.Part multipartBody = MultipartBody.Part.createFormData("files", files.getName(), requestBody);
         view.showLoading(true);
-        ApiClient.getApiEndPoint().insertData("crm_development",multipartBody, categoryBarang, name, categoryGender, categoryElektronik, stokBarang, deskripsi)
+        ApiClient.getApiEndPoint().insertData("crm_development",multipartBody, cB, nama, cG, cE, sB, desc)
                 .enqueue(new Callback<ResponseInsertBarang>() {
                     @Override
                     public void onResponse(Call<ResponseInsertBarang> call, Response<ResponseInsertBarang> response) {

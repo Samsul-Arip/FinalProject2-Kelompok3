@@ -24,7 +24,7 @@ public class TambahStokActivity extends AppCompatActivity implements TambahStock
 
     private Uri uriImage = null;
     private final int pickImage = 1;
-    private int category;
+    private int categoryGender, categoryElectronic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,19 +80,21 @@ public class TambahStokActivity extends AppCompatActivity implements TambahStock
         binding.btnTambahStok.setOnClickListener(v -> {
             int categoryBarang = binding.spinCategory.getSelectedItemPosition();
             int categoryBusana = binding.spinCategoryGender.getSelectedItemPosition();
-            int categoryElectronic = binding.spinCategoryElectronic.getSelectedItemPosition();
+            int categoryElc = binding.spinCategoryElectronic.getSelectedItemPosition();
             String name = binding.edtNamabarang.getText().toString();
             int stockBarang = Integer.parseInt(binding.edtStock.getText().toString());
 
            switch (categoryBarang) {
+               case 0:
+                   categoryBarang = 0;
+                   categoryGender = 0;
+                   categoryElectronic = 0;
+                   break;
                case 1:
-                   category = categoryBusana;
+                   categoryGender = categoryBusana;
                    break;
                case 2:
-                   category = categoryElectronic;
-                   break;
-               default:
-                   category = 0;
+                   categoryElectronic = categoryElc;
                    break;
            }
            if(name.isEmpty() && stockBarang == 0) {
@@ -103,7 +105,7 @@ public class TambahStokActivity extends AppCompatActivity implements TambahStock
            } else {
                presenter.insertStock(
                        FileUtils.getFile(this, uriImage), categoryBarang, name,
-                       category, category, stockBarang, "Ini hanyalah percobaan");
+                       categoryGender, categoryElectronic, stockBarang, "Ini hanyalah percobaan");
            }
         });
 
