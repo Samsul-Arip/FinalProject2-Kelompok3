@@ -24,6 +24,7 @@
     <string name="stok_barang">Stok barang</string>
     <string name="ex_10">ex : 10</string>
     <string name="upload_gambar">Upload gambar</string>
+    <string name="ex_samsularp_gmail_com">ex : samsularp@gmail.com</string>
 
     <string-array name="itemBarang">
         <item>-- Pilih barang --</item>

@@ -1,4 +1,4 @@
-package com.samsul.aplikasiuser;
+package com.samsul.aplikasiuser.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

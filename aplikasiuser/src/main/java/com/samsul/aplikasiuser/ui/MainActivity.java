@@ -1,12 +1,13 @@
-package com.samsul.aplikasiuser;
+package com.samsul.aplikasiuser.ui;
 
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.samsul.aplikasiuser.R;
+import com.samsul.aplikasiuser.adapter.SectionPagerAdapter;
 import com.samsul.aplikasiuser.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

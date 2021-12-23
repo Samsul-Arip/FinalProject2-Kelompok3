@@ -55,7 +55,7 @@
         android:layout_marginTop="30dp"
         />
     <EditText
-        android:id="@+id/edtName"
+        android:id="@+id/edtUsername"
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:background="@drawable/bg_edittext"
@@ -63,6 +63,33 @@
         android:layout_marginEnd="14dp"
         android:layout_marginTop="5dp"
         android:hint="@string/ex_samsul_aripin"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppin_regular"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masukkan Email"
+        android:textColor="@color/black"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="14dp"
+        android:fontFamily="@font/poppin_semibold"
+        android:textSize="14sp"
+        android:layout_gravity="start"
+        android:layout_marginTop="30dp"
+        />
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@drawable/bg_edittext"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="5dp"
+        android:hint="@string/ex_samsularp_gmail_com"
         android:textSize="14sp"
         android:fontFamily="@font/poppin_regular"
         android:paddingStart="14dp"
@@ -135,5 +162,12 @@
         android:textColor="@color/white"
         android:layout_marginBottom="20dp"
         />
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="39dp"
+        android:layout_marginBottom="20dp"/>
 
 </LinearLayout>

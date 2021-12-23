@@ -1,10 +1,13 @@
-package com.samsul.aplikasiuser;
+package com.samsul.aplikasiuser.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.samsul.aplikasiuser.R;
+
 public class RegisterActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

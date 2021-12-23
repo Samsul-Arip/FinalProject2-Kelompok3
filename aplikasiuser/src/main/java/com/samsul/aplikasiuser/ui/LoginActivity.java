@@ -1,4 +1,4 @@
-package com.samsul.aplikasiuser;
+package com.samsul.aplikasiuser.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
