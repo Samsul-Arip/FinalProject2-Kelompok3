@@ -53,8 +53,8 @@ public class RegisterActivity extends AppCompatActivity implements RegisterContr
             binding.pbLoading.setVisibility(View.VISIBLE);
             binding.btnRegister.setVisibility(View.GONE);
         } else {
-            binding.pbLoading.setVisibility(View.VISIBLE);
-            binding.btnRegister.setVisibility(View.GONE);
+            binding.pbLoading.setVisibility(View.GONE);
+            binding.btnRegister.setVisibility(View.VISIBLE);
         }
     }
 }
