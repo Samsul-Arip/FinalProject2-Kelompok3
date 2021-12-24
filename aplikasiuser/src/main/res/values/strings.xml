@@ -31,5 +31,6 @@
     <string name="elekronik">Elektronik</string>
     <string name="brandel">Brandel</string>
     <string name="logout">Logout</string>
+    <string name="deskripsi_barang">Deskripsi barang</string>
 
 </resources>

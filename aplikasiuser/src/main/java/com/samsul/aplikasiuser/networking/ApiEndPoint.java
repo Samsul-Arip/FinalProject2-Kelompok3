@@ -1,5 +1,6 @@
 package com.samsul.aplikasiuser.networking;
 
+import com.samsul.aplikasiuser.data.model.ResponseDetail;
 import com.samsul.aplikasiuser.data.model.ResponseGetData;
 import com.samsul.aplikasiuser.data.model.ResponseLogin;
 import com.samsul.aplikasiuser.data.model.ResponseRegister;
@@ -52,5 +53,12 @@ public interface ApiEndPoint {
             @Query("kategory_elektronik") int categoryElektronik
     );
 
+    @GET("Barang/getDetailBarang")
+    @Headers("Authorization: Basic Y3JtOjEyMw==")
+    Call<ResponseDetail>
+    getDetail(
+            @Header("taco-auth-key") String auth,
+            @Query("id") int id
+    );
 
 }

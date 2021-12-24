@@ -23,6 +23,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
 
     private final ArrayList<DataGet> listData = new ArrayList<>();
 
+    public static OnItemClickCallBack onItemClickCallBack;
+
+    public void setOnItemClickCallBack(OnItemClickCallBack onItemClickCallBack) {
+        ListAdapter.onItemClickCallBack = onItemClickCallBack;
+    }
 
     @SuppressLint("NotifyDataSetChanged")
     public void setData(List<DataGet> list) {
@@ -65,6 +70,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
             Bitmap decodedByte = BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
             binding.imgGambar.setImageBitmap(decodedByte);
 
+            binding.getRoot().setOnClickListener(v -> {
+                onItemClickCallBack.onItemClicked(data);
+            });
+
         }
+    }
+
+    public interface OnItemClickCallBack {
+        void onItemClicked(DataGet data);
     }
 }

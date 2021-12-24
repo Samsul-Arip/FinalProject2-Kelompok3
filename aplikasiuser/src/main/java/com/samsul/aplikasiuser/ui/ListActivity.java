@@ -91,6 +91,12 @@ public class ListActivity extends AppCompatActivity implements ListContract.Main
             onBackPressed();
             finish();
         });
+
+        listAdapter.setOnItemClickCallBack(data -> {
+            Intent intent = new Intent(ListActivity.this, DetailActivity.class);
+            intent.putExtra(Constant.ID_LIST, data.getId());
+            startActivity(intent);
+        });
     }
 
     @Override
