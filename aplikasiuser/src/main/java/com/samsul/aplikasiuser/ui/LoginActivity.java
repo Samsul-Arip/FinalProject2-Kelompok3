@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.samsul.aplikasiuser.data.Constant.Constant;
+import com.samsul.aplikasiuser.data.preferences.LocalPreferences;
 import com.samsul.aplikasiuser.databinding.ActivityLoginBinding;
 import com.samsul.aplikasiuser.presenter.LoginPresenter;
 import com.samsul.aplikasiuser.repository.LoginContract;
@@ -15,6 +17,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Ma
 
     private ActivityLoginBinding binding;
     private LoginPresenter presenter;
+    private LocalPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +25,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Ma
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         presenter = new LoginPresenter(this);
-
+        preferences = new LocalPreferences(this);
 
     }
 
@@ -62,6 +65,8 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Ma
 
     @Override
     public void nextActivity() {
+        preferences.getEditor().putBoolean(Constant.PREFS_LOGIN, true);
+        preferences.getEditor().apply();
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
         finish();

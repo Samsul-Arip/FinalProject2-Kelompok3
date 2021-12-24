@@ -6,5 +6,7 @@ public class Constant {
     public static final String categoryGender = "categoryGender";
     public static final String categoryBarang = "categoryBarang";
 
+    public static String PREFS_LOGIN = "isLogin";
+
 
 }
