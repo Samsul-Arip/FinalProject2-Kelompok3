@@ -1,4 +1,4 @@
-package com.samsul.finalproject2.ui.tambah;
+package com.samsul.finalproject2.ui;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -107,6 +107,10 @@ public class TambahStokActivity extends AppCompatActivity implements TambahStock
                        FileUtils.getFile(this, uriImage), categoryBarang, name,
                        categoryGender, categoryElectronic, stockBarang, "Ini hanyalah percobaan");
            }
+        });
+        binding.imgBack.setOnClickListener(v -> {
+            onBackPressed();
+            TambahStokActivity.this.finish();
         });
 
     }

@@ -1,173 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    tools:context=".ui.tambah.DaftarStafActivity">
+    tools:context=".ui.DaftarStafActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarStaf"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_alignParentTop="true">
 
         <ImageView
             android:id="@+id/imgBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_back_toolbar"
-            />
+            android:src="@drawable/ic_back_toolbar" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tambah_staf"
-            android:fontFamily="@font/poppin_semibold"
-            android:textSize="18sp"
-            android:textColor="@color/black"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/poppin_semibold"
             android:paddingTop="5dp"
-            />
+            android:text="@string/tambah_staf"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="144dp"
-        android:src="@drawable/logo_tambah_staf"
-        android:layout_marginTop="25dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/masukkan_nama"
-        android:textColor="@color/black"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="14dp"
-        android:fontFamily="@font/poppin_semibold"
-        android:textSize="14sp"
-        android:layout_gravity="start"
-        android:layout_marginTop="30dp"
-        />
-    <EditText
-        android:id="@+id/edtUsername"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:background="@drawable/bg_edittext"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginTop="5dp"
-        android:hint="@string/ex_samsul_aripin"
-        android:textSize="14sp"
-        android:fontFamily="@font/poppin_regular"
-        android:paddingStart="14dp"
-        android:paddingEnd="14dp"
-        />
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_below="@id/toolbarStaf"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Masukkan Email"
-        android:textColor="@color/black"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="14dp"
-        android:fontFamily="@font/poppin_semibold"
-        android:textSize="14sp"
-        android:layout_gravity="start"
-        android:layout_marginTop="30dp"
-        />
-    <EditText
-        android:id="@+id/edtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:background="@drawable/bg_edittext"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginTop="5dp"
-        android:hint="@string/ex_samsularp_gmail_com"
-        android:textSize="14sp"
-        android:fontFamily="@font/poppin_regular"
-        android:paddingStart="14dp"
-        android:paddingEnd="14dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/password"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="14dp"
-        android:fontFamily="@font/poppin_semibold"
-        android:textSize="14sp"
-        android:textColor="@color/black"
-        android:layout_gravity="start"
-        android:layout_marginTop="18dp"
-        />
-    <EditText
-        android:id="@+id/edtPassword"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:background="@drawable/bg_edittext"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginTop="5dp"
-        android:hint="@string/masukkan_kata_sandi"
-        android:textSize="14sp"
-        android:fontFamily="@font/poppin_regular"
-        android:paddingStart="14dp"
-        android:paddingEnd="14dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/konfirmasi_password"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="14dp"
-        android:fontFamily="@font/poppin_semibold"
-        android:textSize="14sp"
-        android:textColor="@color/black"
-        android:layout_gravity="start"
-        android:layout_marginTop="18dp"
-        />
-    <EditText
-        android:id="@+id/edtKonfirmasiPassword"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:background="@drawable/bg_edittext"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginTop="5dp"
-        android:hint="@string/konfirmasi_kata_sandi"
-        android:textSize="14sp"
-        android:fontFamily="@font/poppin_regular"
-        android:paddingStart="14dp"
-        android:paddingEnd="14dp"
-        />
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnDaftarstaf"
-        android:layout_width="match_parent"
-        android:layout_height="63dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginTop="39dp"
-        android:background="@drawable/bg_button"
-        android:text="@string/tambah_staf"
-        android:textAllCaps="false"
-        android:fontFamily="@font/poppin_semibold"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:layout_marginBottom="20dp"
-        />
-    <ProgressBar
-        android:id="@+id/pbLoading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="39dp"
-        android:layout_marginBottom="20dp"/>
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="144dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/logo_tambah_staf" />
 
-</LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="14dp"
+                android:fontFamily="@font/poppin_semibold"
+                android:text="@string/masukkan_nama"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtUsername"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_edittext"
+                android:fontFamily="@font/poppin_regular"
+                android:hint="@string/ex_samsul_aripin"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="14dp"
+                android:fontFamily="@font/poppin_semibold"
+                android:text="Masukkan Email"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_edittext"
+                android:fontFamily="@font/poppin_regular"
+                android:hint="@string/ex_samsularp_gmail_com"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="14dp"
+                android:fontFamily="@font/poppin_semibold"
+                android:text="@string/password"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_edittext"
+                android:fontFamily="@font/poppin_regular"
+                android:hint="@string/masukkan_kata_sandi"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="14dp"
+                android:fontFamily="@font/poppin_semibold"
+                android:text="@string/konfirmasi_password"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtKonfirmasiPassword"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_edittext"
+                android:fontFamily="@font/poppin_regular"
+                android:hint="@string/konfirmasi_kata_sandi"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDaftarstaf"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="39dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_button"
+                android:fontFamily="@font/poppin_semibold"
+                android:text="@string/tambah_staf"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ProgressBar
+                android:id="@+id/pbLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="39dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

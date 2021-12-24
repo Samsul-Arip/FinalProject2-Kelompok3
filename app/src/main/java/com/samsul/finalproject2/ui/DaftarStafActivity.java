@@ -1,4 +1,4 @@
-package com.samsul.finalproject2.ui.tambah;
+package com.samsul.finalproject2.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -43,6 +43,10 @@ public class DaftarStafActivity extends AppCompatActivity implements TambahStafC
                 presenter.insertStaf(username, "sam", password, email);
             }
 
+        });
+        binding.imgBack.setOnClickListener(v -> {
+            onBackPressed();
+            DaftarStafActivity.this.finish();
         });
     }
 
