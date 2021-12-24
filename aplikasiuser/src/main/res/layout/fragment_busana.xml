@@ -13,6 +13,7 @@
         android:orientation="vertical"
         >
         <RelativeLayout
+            android:id="@+id/viewBusanaPria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_logo_pria"
@@ -31,6 +32,7 @@
                 />
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/viewBusanaPerempuan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_logo_wanita"

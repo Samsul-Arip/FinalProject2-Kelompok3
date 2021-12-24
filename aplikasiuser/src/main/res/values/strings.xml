@@ -27,5 +27,7 @@
     <string name="pria">Pria</string>
     <string name="perempuan">Perempuan</string>
     <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="busana">Busana</string>
+    <string name="elekronik">Elektronik</string>
 
 </resources>

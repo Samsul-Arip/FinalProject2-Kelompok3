@@ -26,17 +26,20 @@ public class RegisterActivity extends AppCompatActivity implements RegisterContr
 
     @Override
     public void onCreateActivity() {
-        String username = binding.edtName.getText().toString();
-        String password = binding.edtPassword.getText().toString();
-        String noPhone = binding.edtPhone.getText().toString();
+        binding.btnRegister.setOnClickListener(v -> {
+            String username = binding.edtName.getText().toString();
+            String password = binding.edtPassword.getText().toString();
+            String noPhone = binding.edtPhone.getText().toString();
 
-        if(username.isEmpty() && password.isEmpty() && noPhone.isEmpty()) {
-            binding.edtName.setError("Tidak boleh kosong");
-            binding.edtPassword.setError("Tidak boleh kosong");
-            binding.edtPhone.setError("Tidak boleh kosong");
-        } else {
-            presenter.registerUser(username, username, password, noPhone);
-        }
+            if(username.isEmpty() && password.isEmpty() && noPhone.isEmpty()) {
+                binding.edtName.setError("Tidak boleh kosong");
+                binding.edtPassword.setError("Tidak boleh kosong");
+                binding.edtPhone.setError("Tidak boleh kosong");
+            } else {
+                presenter.registerUser(username, username, password, noPhone);
+            }
+        });
+
     }
 
     @Override
