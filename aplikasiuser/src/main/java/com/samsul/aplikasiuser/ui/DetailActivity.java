@@ -39,7 +39,10 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
 
     @Override
     public void onCreateActivity() {
-
+        binding.imgBack.setOnClickListener(v -> {
+            onBackPressed();
+            DetailActivity.this.finish();
+        });
     }
 
     @Override

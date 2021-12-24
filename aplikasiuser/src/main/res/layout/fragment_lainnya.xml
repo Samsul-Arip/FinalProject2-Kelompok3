@@ -12,48 +12,42 @@
         android:orientation="vertical"
         >
         <RelativeLayout
-            android:id="@+id/viewKomputer"
+            android:id="@+id/viewBuku"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_komputer"
+            android:background="@drawable/logo_book"
             android:layout_marginStart="14dp"
             android:layout_marginEnd="14dp"
             android:layout_marginTop="20dp"
             >
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/komputer"
                 android:layout_centerInParent="true"
-                android:textSize="24sp"
                 android:fontFamily="@font/poppin_semibold"
+                android:text="@string/buku"
                 android:textColor="@color/white"
-                />
+                android:textSize="24sp" />
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/viewSmartPhone"
+            android:id="@+id/viewOther"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_smartphone"
+            android:background="@drawable/logo_other"
             android:layout_marginStart="14dp"
             android:layout_marginEnd="14dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             >
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/poppin_semibold"
-                android:text="@string/smart_phone"
+                android:text="@string/other"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
         </RelativeLayout>
     </LinearLayout>
-
-
-
-
-
 </ScrollView>

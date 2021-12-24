@@ -55,10 +55,20 @@ public class ListActivity extends AppCompatActivity implements ListContract.Main
                 categoryBarang = 2;
                 binding.tvTitleToolbar.setText(getResources().getText(R.string.elekronik));
                 break;
+            case 3:
+                categoryBarang = 3;
+                binding.tvTitleToolbar.setText(getResources().getText(R.string.book));
+                break;
+            case 4:
+                categoryBarang = 4;
+                binding.tvTitleToolbar.setText(getResources().getText(R.string.other));
+                break;
         }
+
         switch (cG) {
             case 0:
                 categoryGender = 0;
+                break;
             case 1:
                 categoryGender = 1;
                 break;
@@ -70,6 +80,7 @@ public class ListActivity extends AppCompatActivity implements ListContract.Main
         switch (cE) {
             case 0:
                 categoryElectronic = 0;
+                break;
             case 1:
                 categoryElectronic = 1;
                 break;

@@ -20,6 +20,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tab_text_1">Busana</string>
     <string name="tab_text_2">Electronic</string>
+    <string name="tab_text_3">Lainnya</string>
     <string name="beranda">Beranda</string>
     <string name="free_shipping_nduring_covid_19">Free Shipping \nDuring Covid - 19</string>
     <string name="komputer">Komputer</string>
@@ -29,8 +30,12 @@
     <string name="enter_your_phone_number">Enter your phone number</string>
     <string name="busana">Busana</string>
     <string name="elekronik">Elektronik</string>
+    <string name="book">Buku</string>
     <string name="brandel">Brandel</string>
     <string name="logout">Logout</string>
     <string name="deskripsi_barang">Deskripsi barang</string>
+    <string name="detail_barang">Detail barang</string>
+    <string name="buku">Buku</string>
+    <string name="other">Other</string>
 
 </resources>

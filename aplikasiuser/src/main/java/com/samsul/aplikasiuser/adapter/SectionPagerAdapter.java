@@ -7,6 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.samsul.aplikasiuser.fragment.BusanaFragment;
 import com.samsul.aplikasiuser.fragment.ElectronicFragment;
+import com.samsul.aplikasiuser.fragment.LainnyaFragment;
 
 public class SectionPagerAdapter extends FragmentStateAdapter {
 
@@ -26,14 +27,16 @@ public class SectionPagerAdapter extends FragmentStateAdapter {
             case 1:
                 fragment = new ElectronicFragment();
                 break;
+            case 2:
+                fragment = new LainnyaFragment();
+                break;
         }
-
         assert fragment != null;
         return fragment;
     }
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 3;
     }
 }

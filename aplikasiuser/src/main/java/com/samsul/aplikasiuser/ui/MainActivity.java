@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     @StringRes
     private final int[] TAB_TITLES = new int[]{
             R.string.tab_text_1,
-            R.string.tab_text_2
+            R.string.tab_text_2,
+            R.string.tab_text_3
     };
     private LocalPreferences localPreferences;
 
