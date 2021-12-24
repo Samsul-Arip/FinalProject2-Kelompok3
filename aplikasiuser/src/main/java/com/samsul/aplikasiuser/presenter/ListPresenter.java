@@ -30,9 +30,9 @@ public class ListPresenter implements ListContract.Presenter {
                             responseGetData.setData(responseGetData.getData());
                             view.showLoading(false);
                             view.resultListData(response.body());
-                        } else {
+                        } else if(response.code() == 400){
                             view.showLoading(false);
-                            view.showMessage("Terjadi kesalahan");
+                            view.showMessage("Tidak ada data");
                         }
                     }
 

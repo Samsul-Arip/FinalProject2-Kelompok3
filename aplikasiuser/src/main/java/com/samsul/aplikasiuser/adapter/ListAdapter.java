@@ -2,6 +2,9 @@ package com.samsul.aplikasiuser.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +61,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
         public void bind(DataGet data) {
             binding.tvTitle.setText(data.getName());
             binding.tvDeslripsi.setText(data.getDeskripsi());
+            byte[] imageAsBytes = Base64.decode(data.getImage(), Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
+            binding.imgGambar.setImageBitmap(decodedByte);
+
         }
     }
 }

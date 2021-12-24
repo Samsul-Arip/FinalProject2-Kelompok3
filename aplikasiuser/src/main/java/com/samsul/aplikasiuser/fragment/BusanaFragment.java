@@ -32,14 +32,14 @@ public class BusanaFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         binding.viewBusanaPria.setOnClickListener(v -> {
             Intent intent = new Intent(requireContext(), ListActivity.class);
-            intent.putExtra(Constant.categoryBarang, 1);
-            intent.putExtra(Constant.categoryGender, 1);
+            intent.putExtra(Constant.CATEGORY_BARANG, 1);
+            intent.putExtra(Constant.CATEGORY_GENDER, 1);
             startActivity(intent);
         });
         binding.viewBusanaPerempuan.setOnClickListener(v -> {
             Intent intent = new Intent(requireContext(), ListActivity.class);
-            intent.putExtra(Constant.categoryBarang, 1);
-            intent.putExtra(Constant.categoryGender, 2);
+            intent.putExtra(Constant.CATEGORY_BARANG, 1);
+            intent.putExtra(Constant.CATEGORY_GENDER, 2);
             startActivity(intent);
         });
     }

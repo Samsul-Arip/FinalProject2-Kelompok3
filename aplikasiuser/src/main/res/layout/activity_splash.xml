@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/poppin_semibold"
-        android:text="Brandel"
+        android:text="@string/brandel"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp" />
 

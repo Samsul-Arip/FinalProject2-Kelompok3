@@ -27,7 +27,7 @@ public class ListActivity extends AppCompatActivity implements ListContract.Main
     private ListPresenter presenter;
     private ListAdapter listAdapter;
 
-    int categoryBarang, categoryGender;
+    int categoryBarang, categoryGender, categoryElectronic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +42,9 @@ public class ListActivity extends AppCompatActivity implements ListContract.Main
     protected void onStart() {
         super.onStart();
         Intent intent = getIntent();
-        int cB = intent.getIntExtra(Constant.categoryBarang, 0);
-        int cG = intent.getIntExtra(Constant.categoryGender, 0);
+        int cB = intent.getIntExtra(Constant.CATEGORY_BARANG, 0);
+        int cG = intent.getIntExtra(Constant.CATEGORY_GENDER, 0);
+        int cE = intent.getIntExtra(Constant.CATEGORY_ELECTRONIC, 0);
 
         switch (cB) {
             case 1:
@@ -56,6 +57,8 @@ public class ListActivity extends AppCompatActivity implements ListContract.Main
                 break;
         }
         switch (cG) {
+            case 0:
+                categoryGender = 0;
             case 1:
                 categoryGender = 1;
                 break;
@@ -63,7 +66,18 @@ public class ListActivity extends AppCompatActivity implements ListContract.Main
                 categoryGender = 2;
                 break;
         }
-        presenter.getData(categoryBarang, categoryGender, 0);
+
+        switch (cE) {
+            case 0:
+                categoryElectronic = 0;
+            case 1:
+                categoryElectronic = 1;
+                break;
+            case 2:
+                categoryElectronic = 2;
+                break;
+        }
+        presenter.getData(categoryBarang, categoryGender, categoryElectronic);
     }
 
     @Override
