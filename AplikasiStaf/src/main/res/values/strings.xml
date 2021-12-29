@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AplikasiStaf</string>
+    <string name="masuk_sebgai_staf">Masuk sebgai staf</string>
+    <string name="username">Username</string>
+    <string name="masukkan_username">Masukkan username</string>
+    <string name="masukkan_kata_sandi">Masukkan kata sandi</string>
+    <string name="ingat_saya">Ingat saya</string>
+    <string name="masuk">Masuk</string>
+    <string name="password">Password</string>
+    <string name="brandel">Brandel</string>
 </resources>
