@@ -7,5 +7,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Final Project 2"
-include ':app'
-include ':aplikasiuser'
+include ':AplikasiAdmin'
+include ':AplikasiUser'
+include ':AplikasiStaf'

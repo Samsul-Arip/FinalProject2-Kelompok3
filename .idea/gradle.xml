@@ -11,8 +11,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/aplikasiuser" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/AplikasiAdmin" />
+            <option value="$PROJECT_DIR$/AplikasiStaf" />
+            <option value="$PROJECT_DIR$/AplikasiUser" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
