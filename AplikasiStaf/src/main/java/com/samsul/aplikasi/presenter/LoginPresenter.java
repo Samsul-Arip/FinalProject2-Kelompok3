@@ -27,6 +27,7 @@ public class LoginPresenter implements LoginContract.Presenter {
                     view.showLoading(false);
                     view.showMessage("Berhasil Login");
                     view.nextActivity();
+
                 } else {
                     view.showMessage("Terjadi kesalahan");
                     view.showLoading(false);
